@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsNewSetup</title>
+    <title>Networking Tracker</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <%= javascript_include_tag 'application' %>
   </head>
 
@@ -12,13 +13,6 @@
     <% flash.each do |type, message| %>
       <%= content_tag :div, sanitize(message), class: "alert alert-#{type}" %>
     <% end %>
-      <% if current_user %>
-        Welcome, <%= current_user.username %>
-        <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
-      <% else %>
-        <%= link_to "Login", login_path %>
-        <%= link_to "Sign up", new_user_path, class: "btn btn-primary" %>
-      <% end %>
     <%= yield %>
   </body>
 </html>

@@ -4,7 +4,7 @@ describe 'User can log in', type: :feature do
   scenario 'user clicks Login and sees login form' do
     visit root_path
 
-    click_on 'Login'
+    click_on 'Log in'
 
     expect(current_path).to eq login_path
 

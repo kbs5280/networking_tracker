@@ -1,9 +1,5 @@
 class ContactsController < ApplicationController
   def index
-    @contact = Contact.new
-  end
-
-  def create
-
+    redirect_to home_path if !current_user
   end
 end

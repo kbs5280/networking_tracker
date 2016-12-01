@@ -1,13 +1,23 @@
+<%= link_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+
+<h2>Welcome, <%= current_user.username %></h2>
+
 <h1>Networking Tracker</h1>
 
 <h2>New contact</h2>
-<%= form_for @contact, url: root_path do |f| %>
-  <%= f.text_field :first_name, placeholder: 'First name' %>
-  <%= f.text_field :last_name, placeholder: 'Last name' %>
-  <%= f.text_field :email, placeholder: 'Email' %>
-  <%= f.text_field :phone, placeholder: 'Phone' %>
-  <%= f.text_field :linked_in, placeholder: 'LinkedIn' %>
-  <%= f.text_field :twitter, placeholder: 'Twitter' %>
-  <%= f.text_field :other, placeholder: 'Other' %>
-  <%= f.submit 'Create contact', class: "btn btn-primary btn-sm" %>
-<% end %>
+
+<div class="form">
+  <form data-user-id=" <%= current_user.id %> ">
+    <input type="text" name="first-name" id="first-name" placeholder="First Name"><br>
+    <input type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
+    <input type="text" name="email" id="email" placeholder="Email"><br>
+    <input type="text" name="phone" id="phone" placeholder="Phone"><br>
+    <input type="text" name="linked-in" id="linked-in" placeholder="LinkedIn"><br>
+    <input type="text" name="twitter" id="twitter" placeholder="Twitter"><br>
+    <input type="text" name="other" id="other" placeholder="Other"><br>
+  <input type="submit" value="Create contact" id="create-contact" class="btn btn-primary btn-sm"><br><br>
+  </form>
+</div>
+
+<ul id="list-of-contacts">
+</ul>
