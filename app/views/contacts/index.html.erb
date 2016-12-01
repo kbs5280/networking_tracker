@@ -1,7 +1,7 @@
 <h1>Networking Tracker</h1>
 
 <h2>New contact</h2>
-<%= form_for @contact, url: root_path do |f| %>
+<%= form_for @contact, url: contacts_path do |f| %>
   <%= f.text_field :first_name, placeholder: 'First name' %>
   <%= f.text_field :last_name, placeholder: 'Last name' %>
   <%= f.text_field :email, placeholder: 'Email' %>
