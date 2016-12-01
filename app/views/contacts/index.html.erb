@@ -5,7 +5,7 @@
     <h2>Welcome, <%= current_user.username %></h2>
     <h2>New contact</h2>
 
-    <form data-user-id=" <%= current_user.id %> ">
+    <form id="form" data-user-id=" <%= current_user.id %> ">
       <input type="text" name="first-name" id="first-name" placeholder="First Name"><br>
       <input type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
       <input type="text" name="email" id="email" placeholder="Email"><br>
@@ -17,6 +17,11 @@
     </form>
   </div>
   <div class="row" id="table">
+    <% @months.each do |month| %>
+      <button class="btn btn-primary btn-sm" id="<%= month.downcase %>">
+        <%= month %>
+      </button>
+    <% end %>
     <table>
       <thead>
         <tr>
@@ -27,6 +32,10 @@
           <th>LinkedIn</th>
           <th>Twitter</th>
           <th>Other</th>
+          <th>Method</th>
+          <th>Date</th>
+          <th>Meeting</th>
+          <th>Meeting Date</th>
         </tr>
       </thead>
       <tbody id="list-of-contacts">
