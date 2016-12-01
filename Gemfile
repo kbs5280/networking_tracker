@@ -23,6 +23,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
+  gem 'faker'
   gem 'simplecov', require: false
   gem 'vcr'
   gem 'webmock'

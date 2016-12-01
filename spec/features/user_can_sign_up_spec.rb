@@ -15,7 +15,7 @@ describe 'User can sign up', type: :feature do
     expect(page).to have_content 'Sign up'
     expect(page).to have_button 'Create account'
   end
-  
+
   scenario 'and is redirected to the root path' do
     visit new_user_path
 
@@ -28,7 +28,7 @@ describe 'User can sign up', type: :feature do
     expect(page).to have_content 'Account created'
     expect(page).to have_content 'Welcome, Username'
     expect(page).to have_content 'Logout'
-    expect(page).not_to have_content 'Login'
-    expect(page).not_to have_content 'Sign up'
+    expect(page).not_to have_link 'Login'
+    expect(page).not_to have_link 'Sign up'
   end
 end

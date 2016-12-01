@@ -13,4 +13,21 @@ describe 'User can log in', type: :feature do
 
     expect(page).to have_button 'Login'
   end
+
+  scenario 'user logs in and is redirected to root path' do
+    user = User.create(username: 'Username', password: 'password', password_confirmation: 'password')
+
+    visit login_path
+
+    fill_in 'Username', with: 'Username'
+    fill_in 'Password', with: 'password'
+    click_button 'Login'
+
+    expect(current_path).to eq root_path
+    expect(page).to have_content 'Login successful!'
+    expect(page).to have_content 'Welcome, Username'
+    expect(page).to have_content 'Logout'
+    expect(page).not_to have_link 'Login'
+    expect(page).not_to have_link 'Sign up'
+  end
 end
