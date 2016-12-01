@@ -1,9 +1,3 @@
-$(document).ready(function() {
-
-  createContact();
-
-});
-
 function createContact() {
   $("#create-contact").on("click", function(event) {
     event.preventDefault();
@@ -34,7 +28,7 @@ function createContact() {
       method: 'post',
       url: '/api/v1/contacts',
       data: contactParams
-    }).then(createContactHTML).then(renderContact)
+    }).then(createContactHTML).then(renderContact).then(resetForm)
   })
 }
 

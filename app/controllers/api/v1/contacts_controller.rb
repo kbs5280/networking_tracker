@@ -1,5 +1,8 @@
 class Api::V1::ContactsController < ApplicationController
   def index
+    contacts = Contact.where(user_id: current_user.id).order(created_at: :desc)
+
+    respond_with contacts
   end
 
   def create
