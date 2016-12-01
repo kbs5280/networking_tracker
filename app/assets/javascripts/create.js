@@ -39,8 +39,17 @@ function createContact() {
 }
 
 function createContactHTML( contactData ) {
+  let contact = contactData.data
   return $(
-
+    `<tr class='contact'>
+      <td>${contact.first_name}</td>
+      <td>${contact.last_name}</td>
+      <td>${contact.email}</td>
+      <td>${contact.phone}</td>
+      <td>${contact.linked_in}</td>
+      <td>${contact.twitter}</td>
+      <td>${contact.other}</td>
+    </tr>`
   )
 }
 
