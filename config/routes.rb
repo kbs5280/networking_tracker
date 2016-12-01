@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
- root 'home#index'
+ root 'contacts#index'
 
  resources :users, only: [:new, :create]
+ resources :contacts, only: [:index, :new, :create]
 
  get '/login', to: 'sessions#new'
  post '/login', to: 'sessions#create'
