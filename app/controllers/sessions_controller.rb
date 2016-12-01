@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
-
   def new
-
   end
 
   def create
@@ -9,7 +7,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       redirect_to root_path
-      flash[:success] = 'Login successful!'
+      flash.now[:success] = 'Login successful!'
     else
       flash.now[:danger] = user.errors.full_messages.join(', ')
       render :new

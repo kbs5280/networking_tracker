@@ -12,13 +12,6 @@
     <% flash.each do |type, message| %>
       <%= content_tag :div, sanitize(message), class: "alert alert-#{type}" %>
     <% end %>
-      <% if current_user %>
-        Welcome, <%= current_user.username %>
-        <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
-      <% else %>
-        <%= link_to "Login", login_path %>
-        <%= link_to "Sign up", new_user_path, class: "btn btn-primary" %>
-      <% end %>
     <%= yield %>
   </body>
 </html>
