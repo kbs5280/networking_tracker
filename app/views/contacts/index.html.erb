@@ -1,36 +1,36 @@
 <%= link_to "Logout", logout_path, method: :delete, class: "btn btn-danger" %>
+<div class="container">
+  <div class="row form">
+    <h1>Networking Tracker</h1>
+    <h2>Welcome, <%= current_user.username %></h2>
+    <h2>New contact</h2>
 
-<h2>Welcome, <%= current_user.username %></h2>
-
-<h1>Networking Tracker</h1>
-
-<h2>New contact</h2>
-
-<div class="form">
-  <form data-user-id=" <%= current_user.id %> ">
-    <input type="text" name="first-name" id="first-name" placeholder="First Name"><br>
-    <input type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
-    <input type="text" name="email" id="email" placeholder="Email"><br>
-    <input type="text" name="phone" id="phone" placeholder="Phone"><br>
-    <input type="text" name="linked-in" id="linked-in" placeholder="LinkedIn"><br>
-    <input type="text" name="twitter" id="twitter" placeholder="Twitter"><br>
-    <input type="text" name="other" id="other" placeholder="Other"><br>
-  <input type="submit" value="Create contact" id="create-contact" class="btn btn-primary btn-sm"><br><br>
-  </form>
+    <form data-user-id=" <%= current_user.id %> ">
+      <input type="text" name="first-name" id="first-name" placeholder="First Name"><br>
+      <input type="text" name="last-name" id="last-name" placeholder="Last Name"><br>
+      <input type="text" name="email" id="email" placeholder="Email"><br>
+      <input type="text" name="phone" id="phone" placeholder="Phone"><br>
+      <input type="text" name="linked-in" id="linked-in" placeholder="LinkedIn"><br>
+      <input type="text" name="twitter" id="twitter" placeholder="Twitter"><br>
+      <input type="text" name="other" id="other" placeholder="Other"><br>
+      <input type="submit" value="Create contact" id="create-contact" class="btn btn-primary btn-sm"><br><br>
+    </form>
+  </div>
+  <div class="row" id="table">
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>LinkedIn</th>
+          <th>Twitter</th>
+          <th>Other</th>
+        </tr>
+      </thead>
+      <tbody id="list-of-contacts">
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<table>
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>LinkedIn</th>
-      <th>Twitter</th>
-      <th>Other</th>
-    </tr>
-  </thead>
-  <tbody id="list-of-contacts">
-  </tbody>
-</table>
