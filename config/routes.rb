@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :contacts, only: [:index, :create]
+      resources :months, only: [:index]
     end
   end
 end

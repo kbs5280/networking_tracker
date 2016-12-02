@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20161202163302) do
   create_table "months", force: :cascade do |t|
     t.string  "name"
     t.string  "method",       default: "n/a"
-    t.string  "date",         default: "2016-12-02 16:36:01.884887"
+    t.string  "date",         default: "2016-12-02 17:41:15.120069"
     t.integer "meeting",      default: 0
-    t.string  "meeting_date", default: "2016-12-02 16:36:01.889994"
+    t.string  "meeting_date", default: "2016-12-02 17:41:15.124806"
   end
 
   create_table "users", force: :cascade do |t|
