@@ -18,7 +18,23 @@ div {
   text-align: center;
 }
 
-#create-contact, #last-name, #email, #phone, #linked-in, #twitter, #other {
+main {
+  text-align: center;
+  margin-top: 25px;
+}
+
+#create-contact,
+#last-name,
+#email,
+#phone,
+#linked-in,
+#twitter,
+#other,
+#user_password,
+#user_password_confirmation,
+#session_password,
+.create-account,
+.login {
   margin-top: 10px;
 }
 
@@ -33,7 +49,7 @@ tr > td {
 }
 
 table, th, td {
-   border: 1px solid black;
+  border: 1px solid black;
 }
 
 table {
