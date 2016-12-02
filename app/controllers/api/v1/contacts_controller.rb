@@ -6,12 +6,18 @@ class Api::V1::ContactsController < ApplicationController
   end
 
   def create
+    months_collection = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+
     user = User.find(params[:contact][:user_id].to_i)
     contact = user.contacts.new(contact_params)
+
     if contact.save
+      months_collection.each do |month|
+        contact.months.create(name: month)
+      end
       respond_with(contact, location: api_v1_contacts_path)
     else
-      respond_with :json => [{ :error => "An error was encountered while processing your request. Please try again." }], :status => 304
+      respond_with :json => [{ :error => "Error. Please try again." }], :status => 304
     end
   end
 
