@@ -53,8 +53,17 @@ table, th, td {
 }
 
 table {
-  margin-left: 25px;
+  margin-left: -160px;
   margin-bottom: 40px;
+}
+
+#table2 {
+  margin-top: -151px;
+  margin-left: 916px;
+}
+
+#table2 > tr {
+  margin-top: 10px;
 }
 
 input:focus {

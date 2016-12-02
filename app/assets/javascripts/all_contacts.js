@@ -8,14 +8,13 @@ function allContacts() {
 }
 
 function createEachContactHTML(contactsData) {
-
   return contactsData.data.map(createAllContactHTML);
 }
 
 function createAllContactHTML( createEachContactHTML ) {
   let contact = createEachContactHTML
   return $(
-    `<tr class='contact'>
+    `<tr id='${contact.id}' class='contact'>
       <td>${contact.first_name}</td>
       <td>${contact.last_name}</td>
       <td>${contact.email}</td>
@@ -29,4 +28,5 @@ function createAllContactHTML( createEachContactHTML ) {
 
 function renderContacts(contactsData) {
   $("#list-of-contacts").html(contactsData);
+  allMonths();
 }
