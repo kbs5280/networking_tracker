@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161201233629) do
+ActiveRecord::Schema.define(version: 20161202163302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,18 +30,18 @@ ActiveRecord::Schema.define(version: 20161201233629) do
   end
 
   create_table "month_contacts", force: :cascade do |t|
-    t.integer "months_id"
-    t.integer "contacts_id"
-    t.index ["contacts_id"], name: "index_month_contacts_on_contacts_id", using: :btree
-    t.index ["months_id"], name: "index_month_contacts_on_months_id", using: :btree
+    t.integer "month_id"
+    t.integer "contact_id"
+    t.index ["contact_id"], name: "index_month_contacts_on_contact_id", using: :btree
+    t.index ["month_id"], name: "index_month_contacts_on_month_id", using: :btree
   end
 
   create_table "months", force: :cascade do |t|
     t.string  "name"
     t.string  "method",       default: "n/a"
-    t.string  "date"
+    t.string  "date",         default: "2016-12-02 16:36:01.884887"
     t.integer "meeting",      default: 0
-    t.string  "meeting_date"
+    t.string  "meeting_date", default: "2016-12-02 16:36:01.889994"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,6 +53,6 @@ ActiveRecord::Schema.define(version: 20161201233629) do
   end
 
   add_foreign_key "contacts", "users"
-  add_foreign_key "month_contacts", "contacts", column: "contacts_id"
-  add_foreign_key "month_contacts", "months", column: "months_id"
+  add_foreign_key "month_contacts", "contacts"
+  add_foreign_key "month_contacts", "months"
 end
