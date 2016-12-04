@@ -49,5 +49,4 @@ function createContactHTML( contactData ) {
 
 function renderContact( contactData ) {
   $("#list-of-contacts").prepend(contactData);
-  allMonths();
 }
