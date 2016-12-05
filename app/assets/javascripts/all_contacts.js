@@ -9,8 +9,8 @@ function allContacts() {
     console.log('Contact', contactsData.data);
     console.log('Months', monthsData.data);
 
-    renderContacts(createEachContactHTML(contactsData));
-    createEachContactMonthHTML(monthsData, contactsData);
+    renderContacts(createEachContactHTML(contactsData, monthsData));
+    renderContactMonths(createEachContactMonthHTML(monthsData));
     })
   );
 }
@@ -26,8 +26,19 @@ function getMonths() {
 // create and render HTML for all contacts
 
 function createEachContactHTML(contactsData, monthsData) {
-  return contactsData.data.map(createAllContactHTML);
+  let contacts =  contactsData.data.map(createAllContactHTML);
+  return contacts
 }
+
+// function createEachContactHTML(contactsData, monthsData) {
+//   let months = monthsData
+//   let contacts =  contactsData.data.map(function(contact) {
+//     debugger
+//     createAllContactHTML(contact);
+//   })
+//   return contacts
+// }
+
 
 function createAllContactHTML(contactData) {
   let contact = contactData
@@ -40,7 +51,7 @@ function createAllContactHTML(contactData) {
       <td>${contact.phone}</td>
       <td>${contact.linked_in}</td>
       <td>${contact.twitter}</td>
-      <td >${contact.other}</td>
+      <td>${contact.other}</td>
     </tr>`
   )
 }
@@ -51,12 +62,12 @@ function renderContacts(contactsData) {
 
 // create and append HTML for all contact months
 
-function createEachContactMonthHTML(monthsData, contactsData) {
-    $(".contact").append(monthsData.data.map(createAllContactMonthHTML));
+function createEachContactMonthHTML(monthsData) {
+  return monthsData.data.map(createAllContactMonthHTML);
 }
 
-function createAllContactMonthHTML( createEachContactMonthHTML ) {
-  let month = createEachContactMonthHTML[0]
+function createAllContactMonthHTML( monthData ) {
+  let month = monthData[0]
   const days = [...Array(31).keys()];
 
   return $(
@@ -71,8 +82,6 @@ function createAllContactMonthHTML( createEachContactMonthHTML ) {
 
 function renderContactMonths(monthsData, contactsData) {
   monthsData.forEach(function(month) {
-    contactsData.data.forEach(function(contact){
-      $(`#${contact.id}`).append("hello");
-    })
+    $(".contact").append(month);
   })
 }
