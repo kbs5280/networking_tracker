@@ -14,7 +14,7 @@
 *= require_self
 */
 
-div {
+/*div {
   text-align: center;
 }
 
@@ -34,8 +34,8 @@ main {
 #user_password_confirmation,
 #session_password,
 .create-account,
-.login {
-  margin-top: 10px;
+.login {*/
+  /*margin-top: 10px;
 }
 
 tr > th {
@@ -55,17 +55,13 @@ table, th, td {
 table {
   margin-left: -160px;
   margin-bottom: 40px;
-}
+}*/
 
-#table2 {
+/*#table2 {
   margin-top: -151px;
   margin-left: 916px;
 }
 
 #table2 > tr {
   margin-top: 10px;
-}
-
-input:focus {
-  outline: 0;
-}
+}*/
